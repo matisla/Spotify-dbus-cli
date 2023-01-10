@@ -1,6 +1,6 @@
 import click
 
-from cli.commands import *
+from commands import *
 
 class AliasedGroup(click.Group):
 
@@ -17,14 +17,11 @@ class AliasedGroup(click.Group):
 
 
 @click.command(
-    AliasedGroup,
+    cls=AliasedGroup,
     options_metavar='[<options>]',
     subcommand_metavar='<command> [<args>]',
 )
-
-
 @click.version_option(message=f"Spotify-cli %(version)s")
-
 def cli():
     pass
 
