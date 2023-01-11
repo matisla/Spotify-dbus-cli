@@ -17,9 +17,21 @@ class Spotify:
         self.interface = dbus.Interface(self.player, self.interface_name)
         self.property_interface = dbus.Interface(self.player, self.property_interface_name)
 
-        for action in ["Play", "Pause", "PlayPause", "Next", "Previous"]:
-            setattr(self, action.lower(), getattr(self.interface, action))
+    def play(self) -> None:
+        self.interface.Play()
 
+    def pause(self) -> None:
+        self.interface.Pause()
+    
+    def playpause(self) -> None:
+        self.interface.PlayPause()
+
+    def next(self) -> None:
+        self.interface.Next()
+
+    def previous(self) -> None:
+        self.interface.Previous()
+        
     @property
     def is_running(self) -> bool:
         """
