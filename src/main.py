@@ -1,3 +1,5 @@
+#!/bin/python
+
 import click
 
 from commands import *
@@ -25,7 +27,14 @@ class AliasedGroup(click.Group):
 def cli():
     pass
 
-
 # commands:
 
 cli.add_command(play)
+cli.add_command(pause)
+cli.add_command(toggle)
+cli.add_command(next)
+cli.add_command(previous)
+cli.add_command(volume)
+
+if __name__ == "__main__":
+    cli()
