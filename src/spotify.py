@@ -47,21 +47,13 @@ class Spotify:
 
         return False
 
-    def set_volume(self, level: Union[str, int]) -> None:
+    def set_volume(self, level: float) -> None:
         """
         set the volume to a specific level
 
-        :param level: the volume level in % [0;100]
+        :param level: the volume level in % [0;1]
         """
-
-        if type(level) == int:
-            pass
-
-        elif level.startswith("+") or level.startswith("-"):
-            level = self.get_volume() + int(level)
-
-        percent = max(min(level, 100), 0) / 100
-        self.property_interface.Set(self.interface_name, "Volume", percent)
+        self.property_interface.Set(self.interface_name, "Volume", level)
 
     def get_volume(self) -> int:
         volume = self.property_interface.Get(self.interface_name, "Volume")
