@@ -2,7 +2,7 @@
 
 import click
 
-from commands import *
+from .commands import *
 
 class AliasedGroup(click.Group):
 

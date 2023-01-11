@@ -3,7 +3,7 @@ import click
 from typing import Optional
 
 
-from spotify import Spotify
+from .spotify import Spotify
 
 @click.command()
 def play():

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="spotify_dbus"
+version="0.0.1"
+authors=[ 
+    { name="Matthieu Herrmann" },
+]
+description="Spotify manager throw D-Bus interface"
+readme="README.md"
+requires-python=">=3.6"
+classifiers=[
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio :: Players",
+]
+# license="MIT"
+
+[project.urls]
+"Homepage"="https://github.com/matisla/Spotify-dbus-cli"
+
+[project.scripts]
+spotify-dbus="spotify_dbus.main:cli"
