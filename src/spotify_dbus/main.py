@@ -38,6 +38,7 @@ cli.add_command(previous)
 cli.add_command(volume)
 cli.add_command(services)
 cli.add_command(metadata)
+cli.add_command(song)
 
 
 if __name__ == "__main__":
