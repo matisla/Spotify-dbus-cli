@@ -129,6 +129,15 @@ def metadata():
 
 
 @click.command()
+def status():
+    """
+    get Status of Spotify
+    """
+    sp = get_spotify()
+    click.echo(sp.status())
+
+
+@click.command()
 def services():
     """
     get all available MediaPlayers

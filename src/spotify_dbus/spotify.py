@@ -84,6 +84,24 @@ class Spotify:
 
         return self._connected
 
+    @property
+    def is_playing(self) -> bool:
+        """
+        check if spotify is playing
+
+        :return: True if playing, False otherwise
+        """
+        return "playing" in self.status().lower()
+
+    @connected
+    def status(self) -> str:
+
+        return str(
+            self.player.Get(
+                self.interface_name, "PlaybackStatus", dbus_interface=self.property_interface_name
+            )
+        )
+
     @connected
     def set_volume(self, level: float) -> None:
         """
