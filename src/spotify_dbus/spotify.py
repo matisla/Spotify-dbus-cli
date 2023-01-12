@@ -12,6 +12,7 @@ class SpotifyNotRunningError(Exception):
 def connected(func):
     def wrapper(self, *args, **kwargs):
         if not self.is_connected:
+            self._connect = False
             raise SpotifyNotRunningError("Spotify is not running")
         return func(self, *args, **kwargs)
 
