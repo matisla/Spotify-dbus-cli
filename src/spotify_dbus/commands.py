@@ -136,3 +136,5 @@ def services():
     sp = Spotify()
     for service in sp.services:
         click.echo(service)
+    else:
+        click.echo("No services found", err=True)
